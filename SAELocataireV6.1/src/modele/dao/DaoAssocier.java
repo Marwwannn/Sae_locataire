@@ -45,6 +45,7 @@ public class DaoAssocier extends DaoModele<Associer> implements Dao<Associer> {
 	@Override
 	protected Associer creerInstance(ResultSet curseur) throws SQLException {
 	return new TESTbordel();
+	//aaaa bonjour
 	}
 
 }
