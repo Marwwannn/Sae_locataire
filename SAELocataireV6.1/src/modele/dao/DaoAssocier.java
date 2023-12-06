@@ -46,19 +46,9 @@ public class DaoAssocier extends DaoModele<Associer> implements Dao<Associer> {
 	protected Associer creerInstance(ResultSet curseur) throws SQLException {
 	    boolean caution = curseur.getString("caution").equals("0") ? false : true;
 
-	    // Assuming you have a DaoLocataire and DaoContrat_Location implementation
-	    DaoLocataire daoLocataire = new DaoLocataire();
-	    DaoContratLocation daoContratLocation = new DaoContratLocation();
-
-
-	    Associer associer = new Associer(
-	    		@Override
-	    		protected Associer creerInstance(ResultSet curseur) throws SQLException {
-	    		    boolean caution = curseur.getInt("caution") == 0 ? false : true;
 
 	    		    Associer associer = new Associer(
 	    		        curseur.getString("dateDebutContrat"),
-	    		        curseur.getString("idLocataire"),
 	    		        curseur.getString("dateEntree"),
 	    		        curseur.getString("dateSortie"),
 	    		        curseur.getInt("caution")
@@ -67,10 +57,8 @@ public class DaoAssocier extends DaoModele<Associer> implements Dao<Associer> {
 	    		    // You may want to set other properties of Associer based on your data model
 
 	    		    return associer;
-	    		}
 
 
-	    return associer;
 	}
 
 }
