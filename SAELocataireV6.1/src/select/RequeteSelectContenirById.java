@@ -19,7 +19,7 @@ public class RequeteSelectContenirById extends Requete<Contenir> {
 
     @Override
     public void parametres(PreparedStatement prSt, Contenir data) throws SQLException {
-        prSt.setInt(1, data.getIdCaution());
+        prSt.setString(1, data.getIdCaution());
         prSt.setDate(2, java.sql.Date.valueOf(data.getDateDebutContrat()));
     }
 }

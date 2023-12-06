@@ -1,75 +1,105 @@
 package modele;
 
-
-import java.util.Date;
-import java.util.Objects;
-
 public class ContratLocation {
-	private  String dateDebutContrat;
-	private  Double montant;
-	private  String montantDernierLoyer;
-	private  Date dateVersementLoyer;
-	private  String depotDeGarantie;
-	private  String dateRevision;
-	private  String periodicitePaiement;
-	private  Date dateFinContrat;
-	private  Double chargesProvisionnelles;
-	private final String idICC;
-	private  String valeurICC;
-	private  BienImmobilier bienImmobilier;
+	private String dateDebutContrat;
+	private double montant;
+	private String montantDernierLoyer;
+	private String dateVersementLoyer;
+	private String depotGarantie;
+	private String dateRevision;
+	private String periodicitePaiement;
+	private String dateFinContrat;
+	private double chargesProvisionnelles;
+	private static String idICC;
+	private String valeurICC;
+	private static int idBienImm;
 
-	public ContratLocation(String dateDebutContrat, Double montant, String montantDernierLoyer,
-			Date dateVersementLoyer, String depotDeGarantie, String dateRevision,
-			String periodicitePaiement, Date dateFinContrat, Double chargesProvisionnelles,
-			String idICC, String valeurICC, BienImmobilier bienImmobilier) {
+	public ContratLocation(String dateDebutContrat, double montant, String montantDernierLoyer,
+			String dateVersementLoyer, String depotGarantie, String dateRevision,
+			String periodicitePaiement, String dateFinContrat, double chargesProvisionnelles,
+			String idICC, String valeurICC, int idBienImm) {
 		this.dateDebutContrat = dateDebutContrat;
 		this.montant = montant;
 		this.montantDernierLoyer = montantDernierLoyer;
 		this.dateVersementLoyer = dateVersementLoyer;
-		this.depotDeGarantie = depotDeGarantie;
+		this.depotGarantie = depotGarantie;
 		this.dateRevision = dateRevision;
 		this.periodicitePaiement = periodicitePaiement;
 		this.dateFinContrat = dateFinContrat;
 		this.chargesProvisionnelles = chargesProvisionnelles;
-		this.idICC = idICC;
 		this.valeurICC = valeurICC;
-		this.bienImmobilier = bienImmobilier;
 	}
 
 	public String getDateDebutContrat() {
 		return dateDebutContrat;
 	}
 
-	public Double getMontant() {
+	public void setDateDebutContrat(String dateDebutContrat) {
+		this.dateDebutContrat = dateDebutContrat;
+	}
+
+	public double getMontant() {
 		return montant;
+	}
+
+	public void setMontant(double montant) {
+		this.montant = montant;
 	}
 
 	public String getMontantDernierLoyer() {
 		return montantDernierLoyer;
 	}
 
-	public Date getDateVersementLoyer() {
+	public void setMontantDernierLoyer(String montantDernierLoyer) {
+		this.montantDernierLoyer = montantDernierLoyer;
+	}
+
+	public String getDateVersementLoyer() {
 		return dateVersementLoyer;
 	}
 
-	public String getDepotDeGarantie() {
-		return depotDeGarantie;
+	public void setDateVersementLoyer(String dateVersementLoyer) {
+		this.dateVersementLoyer = dateVersementLoyer;
+	}
+
+	public String getDepotGarantie() {
+		return depotGarantie;
+	}
+
+	public void setDepotGarantie(String depotGarantie) {
+		this.depotGarantie = depotGarantie;
 	}
 
 	public String getDateRevision() {
 		return dateRevision;
 	}
 
+	public void setDateRevision(String dateRevision) {
+		this.dateRevision = dateRevision;
+	}
+
 	public String getPeriodicitePaiement() {
 		return periodicitePaiement;
 	}
 
-	public Date getDateFinContrat() {
+	public void setPeriodicitePaiement(String periodicitePaiement) {
+		this.periodicitePaiement = periodicitePaiement;
+	}
+
+	public String getDateFinContrat() {
 		return dateFinContrat;
 	}
 
-	public Double getChargesProvisionnelles() {
+	public void setDateFinContrat(String dateFinContrat) {
+		this.dateFinContrat = dateFinContrat;
+	}
+
+	public double getChargesProvisionnelles() {
 		return chargesProvisionnelles;
+	}
+
+	public void setChargesProvisionnelles(double chargesProvisionnelles) {
+		this.chargesProvisionnelles = chargesProvisionnelles;
 	}
 
 	public String getIdICC() {
@@ -80,102 +110,11 @@ public class ContratLocation {
 		return valeurICC;
 	}
 
-	public BienImmobilier getBienImmobilier() {
-		return bienImmobilier;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(dateDebutContrat);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (!(obj instanceof ContratLocation)) {
-			return false;
-		}
-		ContratLocation other = (ContratLocation) obj;
-		return Objects.equals(dateDebutContrat, other.dateDebutContrat);
-	}
-
-	/**
-	 * @param dateDebutContrat the dateDebutContrat to set
-	 */
-	public void setDateDebutContrat(String dateDebutContrat) {
-		this.dateDebutContrat = dateDebutContrat;
-	}
-
-	/**
-	 * @param montant the montant to set
-	 */
-	public void setMontant(Double montant) {
-		this.montant = montant;
-	}
-
-	/**
-	 * @param montantDernierLoyer the montantDernierLoyer to set
-	 */
-	public void setMontantDernierLoyer(String montantDernierLoyer) {
-		this.montantDernierLoyer = montantDernierLoyer;
-	}
-
-	/**
-	 * @param dateVersementLoyer the dateVersementLoyer to set
-	 */
-	public void setDateVersementLoyer(Date dateVersementLoyer) {
-		this.dateVersementLoyer = dateVersementLoyer;
-	}
-
-	/**
-	 * @param depotDeGarantie the depotDeGarantie to set
-	 */
-	public void setDepotDeGarantie(String depotDeGarantie) {
-		this.depotDeGarantie = depotDeGarantie;
-	}
-
-	/**
-	 * @param dateRevision the dateRevision to set
-	 */
-	public void setDateRevision(String dateRevision) {
-		this.dateRevision = dateRevision;
-	}
-
-	/**
-	 * @param periodicitePaiement the periodicitePaiement to set
-	 */
-	public void setPeriodicitePaiement(String periodicitePaiement) {
-		this.periodicitePaiement = periodicitePaiement;
-	}
-
-	/**
-	 * @param dateFinContrat the dateFinContrat to set
-	 */
-	public void setDateFinContrat(Date dateFinContrat) {
-		this.dateFinContrat = dateFinContrat;
-	}
-
-	/**
-	 * @param chargesProvisionnelles the chargesProvisionnelles to set
-	 */
-	public void setChargesProvisionnelles(Double chargesProvisionnelles) {
-		this.chargesProvisionnelles = chargesProvisionnelles;
-	}
-
-
-	/**
-	 * @param valeurICC the valeurICC to set
-	 */
 	public void setValeurICC(String valeurICC) {
 		this.valeurICC = valeurICC;
 	}
 
-	/**
-	 * @param bienImmobilier the bienImmobilier to set
-	 */
-	public void setBienImmobilier(BienImmobilier bienImmobilier) {
-		this.bienImmobilier = bienImmobilier;
+	public int getIdBienImm() {
+		return idBienImm;
 	}
 }

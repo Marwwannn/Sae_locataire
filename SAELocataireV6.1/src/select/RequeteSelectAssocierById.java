@@ -21,7 +21,7 @@ public class RequeteSelectAssocierById extends Requete<Associer> {
     @Override
     public void parametres(PreparedStatement prSt, Associer data) throws SQLException {
         prSt.setDate(1, java.sql.Date.valueOf(data.getDateDebutContrat()));
-        prSt.setInt(2, data.getIdLocataire());
+        prSt.setString(2, data.getIdLocataire());
         prSt.setDate(3, java.sql.Date.valueOf(data.getDateEntree()));
     }
 }

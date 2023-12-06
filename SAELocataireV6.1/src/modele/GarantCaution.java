@@ -1,72 +1,43 @@
 package modele;
 
-import java.util.Objects;
-
+// Class for Garant_Caution
 public class GarantCaution {
-	private final int idCaution;
+	private static String id_Caution;
 	private String nom;
 	private String prenom;
-	private String numeroTelephone;
+	private String numero_Telephone;
 
-	public GarantCaution(int idCaution, String nom, String prenom, String numeroTelephone) {
-		this.idCaution = idCaution;
+	public GarantCaution(String id_Caution, String nom, String prenom, String numero_Telephone) {
 		this.nom = nom;
 		this.prenom = prenom;
-		this.numeroTelephone = numeroTelephone;
+		this.numero_Telephone = numero_Telephone;
 	}
 
-	public int getIdCaution() {
-		return idCaution;
+	public String getId_Caution() {
+		return id_Caution;
 	}
 
 	public String getNom() {
 		return nom;
 	}
 
-	public String getPrenom() {
-		return prenom;
-	}
-
-	public String getNumeroTelephone() {
-		return numeroTelephone;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(idCaution);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (!(obj instanceof GarantCaution)) {
-			return false;
-		}
-		GarantCaution other = (GarantCaution) obj;
-		return Objects.equals(idCaution, other.idCaution);
-	}
-
-
-	/**
-	 * @param nom the nom to set
-	 */
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
 
-	/**
-	 * @param prenom the prenom to set
-	 */
+	public String getPrenom() {
+		return prenom;
+	}
+
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
 
-	/**
-	 * @param numeroTelephone the numeroTelephone to set
-	 */
-	public void setNumeroTelephone(String numeroTelephone) {
-		this.numeroTelephone = numeroTelephone;
+	public String getNumero_Telephone() {
+		return numero_Telephone;
+	}
+
+	public void setNumero_Telephone(String numero_Telephone) {
+		this.numero_Telephone = numero_Telephone;
 	}
 }

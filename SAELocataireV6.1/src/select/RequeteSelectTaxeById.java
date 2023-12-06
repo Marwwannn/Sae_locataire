@@ -18,6 +18,6 @@ public class RequeteSelectTaxeById extends Requete<Taxe> {
 
     @Override
     public void parametres(PreparedStatement prSt, Taxe data) throws SQLException {
-        prSt.setInt(1, data.getIdTaxeFonciere());
+        prSt.setString(1, data.getIdTaxeFonciere());
     }
 }

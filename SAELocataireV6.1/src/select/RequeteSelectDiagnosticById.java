@@ -18,6 +18,6 @@ public class RequeteSelectDiagnosticById extends Requete<Diagnostic> {
 
     @Override
     public void parametres(PreparedStatement prSt, Diagnostic data) throws SQLException {
-        prSt.setInt(1, data.getReferenceDiagnostic());
+        prSt.setString(1, data.getRefDiagnostic());
     }
 }

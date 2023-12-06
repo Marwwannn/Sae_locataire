@@ -18,6 +18,6 @@ public class RequeteSelectLocataireById extends Requete<Locataire> {
 
     @Override
     public void parametres(PreparedStatement prSt, Locataire data) throws SQLException {
-        prSt.setInt(1, data.getIdLocataire());
+        prSt.setString(1, data.getIdLocataire());
     }
 }

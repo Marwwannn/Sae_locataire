@@ -1,127 +1,67 @@
 package modele;
 
-import java.util.Date;
-import java.util.Objects;
-
 public class Facture {
-	private final String siren;
-	private String idFacture;
+	private static String siren;
+	private static String idFacture;
 	private double prix;
 	private String typeEntretien;
-	private Date dateFacture;
-	private BienImmobilier bienImmobilier;
-	private Batiment batiment;
-	private Entreprise entreprise;
+	private String dateFacture;
+	private static String idBienImm;
+	private static String idBatiment;
 
-	public Facture(String siren, String idFacture, double prix, String typeEntretien,
-			Date dateFacture, BienImmobilier bienImmobilier, Batiment batiment, Entreprise entreprise) {
+	public Facture(String siren, int idFacture, double prix, String typeEntretien, String dateFacture,
+			int idBienImm, int idBatiment) {
 		this.siren = siren;
-		this.idFacture = idFacture;
 		this.prix = prix;
 		this.typeEntretien = typeEntretien;
 		this.dateFacture = dateFacture;
-		this.bienImmobilier = bienImmobilier;
-		this.batiment = batiment;
-		this.entreprise = entreprise;
 	}
 
 	public String getSiren() {
 		return siren;
 	}
 
+	public void setSiren(String siren) {
+		this.siren = siren;
+	}
+
 	public String getIdFacture() {
 		return idFacture;
 	}
 
+
 	public double getPrix() {
 		return prix;
+	}
+
+	public void setPrix(double prix) {
+		this.prix = prix;
 	}
 
 	public String getTypeEntretien() {
 		return typeEntretien;
 	}
 
-	public Date getDateFacture() {
-		return dateFacture;
-	}
-
-	public BienImmobilier getBienImmobilier() {
-		return bienImmobilier;
-	}
-
-	public Batiment getBatiment() {
-		return batiment;
-	}
-
-	public Entreprise getEntreprise() {
-		return entreprise;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(siren, idFacture);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (!(obj instanceof Facture)) {
-			return false;
-		}
-		Facture other = (Facture) obj;
-		return Objects.equals(siren, other.siren) &&
-				Objects.equals(idFacture, other.idFacture);
-	}
-
-
-	/**
-	 * @param idFacture the idFacture to set
-	 */
-	public void setIdFacture(String idFacture) {
-		this.idFacture = idFacture;
-	}
-
-	/**
-	 * @param prix the prix to set
-	 */
-	public void setPrix(double prix) {
-		this.prix = prix;
-	}
-
-	/**
-	 * @param typeEntretien the typeEntretien to set
-	 */
 	public void setTypeEntretien(String typeEntretien) {
 		this.typeEntretien = typeEntretien;
 	}
 
-	/**
-	 * @param dateFacture the dateFacture to set
-	 */
-	public void setDateFacture(Date dateFacture) {
+	public String getDateFacture() {
+		return dateFacture;
+	}
+
+	public void setDateFacture(String dateFacture) {
 		this.dateFacture = dateFacture;
 	}
 
-	/**
-	 * @param bienImmobilier the bienImmobilier to set
-	 */
-	public void setBienImmobilier(BienImmobilier bienImmobilier) {
-		this.bienImmobilier = bienImmobilier;
+	public String getIdBienImm() {
+		return idBienImm;
 	}
 
-	/**
-	 * @param batiment the batiment to set
-	 */
-	public void setBatiment(Batiment batiment) {
-		this.batiment = batiment;
+
+
+	public String getIdBatiment() {
+		return idBatiment;
 	}
 
-	/**
-	 * @param entreprise the entreprise to set
-	 */
-	public void setEntreprise(Entreprise entreprise) {
-		this.entreprise = entreprise;
-	}
 }

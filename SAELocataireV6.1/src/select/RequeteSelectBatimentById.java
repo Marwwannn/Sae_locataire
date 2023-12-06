@@ -18,6 +18,6 @@ public class RequeteSelectBatimentById extends Requete<Batiment> {
 
     @Override
     public void parametres(PreparedStatement prSt, Batiment data) throws SQLException {
-        prSt.setInt(1, data.getIdBatiment());
+        prSt.setString(1, data.getId_Batiment());
     }
 }

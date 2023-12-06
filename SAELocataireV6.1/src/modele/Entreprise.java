@@ -1,72 +1,43 @@
 package modele;
 
-import java.util.Objects;
-
+// Class for Entreprise
 public class Entreprise {
-	private final String siren;
-	private String adresseEntreprise;
-	private String numeroTelephone;
-	private String adresseMail;
+	private static String siren;
+	private String adresse_Entreprise;
+	private String tel_Entreprise;
+	private String mail_Entreprise;
 
-	public Entreprise(String siren, String adresseEntreprise, String numeroTelephone, String adresseMail) {
-		this.siren = siren;
-		this.adresseEntreprise = adresseEntreprise;
-		this.numeroTelephone = numeroTelephone;
-		this.adresseMail = adresseMail;
+	public Entreprise(String siren, String adresse_Entreprise, String tel_Entreprise, String mail_Entreprise) {
+		this.adresse_Entreprise = adresse_Entreprise;
+		this.tel_Entreprise = tel_Entreprise;
+		this.mail_Entreprise = mail_Entreprise;
 	}
 
 	public String getSiren() {
 		return siren;
 	}
 
-	public String getAdresseEntreprise() {
-		return adresseEntreprise;
+	public String getAdresse_Entreprise() {
+		return adresse_Entreprise;
 	}
 
-	public String getNumeroTelephone() {
-		return numeroTelephone;
+	public void setAdresse_Entreprise(String adresse_Entreprise) {
+		this.adresse_Entreprise = adresse_Entreprise;
 	}
 
-	public String getAdresseMail() {
-		return adresseMail;
+	public String getTel_Entreprise() {
+		return tel_Entreprise;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(siren);
+	public void setTel_Entreprise(String tel_Entreprise) {
+		this.tel_Entreprise = tel_Entreprise;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (!(obj instanceof Entreprise)) {
-			return false;
-		}
-		Entreprise other = (Entreprise) obj;
-		return Objects.equals(siren, other.siren);
+	public String getMail_Entreprise() {
+		return mail_Entreprise;
 	}
 
-
-	/**
-	 * @param adresseEntreprise the adresseEntreprise to set
-	 */
-	public void setAdresseEntreprise(String adresseEntreprise) {
-		this.adresseEntreprise = adresseEntreprise;
-	}
-
-	/**
-	 * @param numeroTelephone the numeroTelephone to set
-	 */
-	public void setNumeroTelephone(String numeroTelephone) {
-		this.numeroTelephone = numeroTelephone;
-	}
-
-	/**
-	 * @param adresseMail the adresseMail to set
-	 */
-	public void setAdresseMail(String adresseMail) {
-		this.adresseMail = adresseMail;
+	public void setMail_Entreprise(String mail_Entreprise) {
+		this.mail_Entreprise = mail_Entreprise;
 	}
 }

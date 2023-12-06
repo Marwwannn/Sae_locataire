@@ -18,6 +18,6 @@ public class RequeteSelectHistoriquePaiementById extends Requete<HistoriquePaiem
 
     @Override
     public void parametres(PreparedStatement prSt, HistoriquePaiement data) throws SQLException {
-        prSt.setInt(1, data.getIdHistoriquePaiement());
+        prSt.setString(1, data.getIdHistPaiement());
     }
 }

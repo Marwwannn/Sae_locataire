@@ -19,7 +19,7 @@ public class RequeteSelectChargesById extends Requete<Charges> {
 
     @Override
     public void parametres(PreparedStatement prSt, Charges data) throws SQLException {
-        prSt.setString(1, data.getBienImmobilier());
-        prSt.setInt(2, data.getIdCharges());
+        prSt.setString(1, data.getIdBienImm());
+        prSt.setString(2, data.getIdCharges());
     }
 }

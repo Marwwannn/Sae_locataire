@@ -19,7 +19,7 @@ public class RequeteSelectEcheanceById extends Requete<Echeance> {
 
     @Override
     public void parametres(PreparedStatement prSt, Echeance data) throws SQLException {
-        prSt.setString(1, data.getNumeroPolice());
+        prSt.setString(1, data.getNumPolice());
         prSt.setDate(2, java.sql.Date.valueOf(data.getDateEcheance()));
     }
 }
