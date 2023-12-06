@@ -18,6 +18,6 @@ public class RequeteSelectGarantCautionById extends Requete<GarantCaution> {
 
     @Override
     public void parametres(PreparedStatement prSt, GarantCaution data) throws SQLException {
-        prSt.setString(1, data.getId_Caution());
+        prSt.setString(1, data.getidCaution());
     }
 }
