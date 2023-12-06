@@ -40,8 +40,19 @@ public class DaoAssurance extends DaoModele<Assurance> implements Dao<Assurance>
 
 	@Override
 	protected Assurance creerInstance(ResultSet curseur) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	    Assurance assurance = new Assurance(
+	        curseur.getString("numPolice"),
+	        curseur.getString("tarifInitial"),
+	        curseur.getString("typeAssurance"),
+	        curseur.getString("dateEffetDebut"),
+	        curseur.getInt("idBienImm"),
+	        curseur.getInt("idBatiment")
+	    );
+
+	    // You may want to set other properties of Assurance based on your data model
+
+	    return assurance;
 	}
+
 
 }
