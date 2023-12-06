@@ -47,5 +47,5 @@ public class DaoAssocier extends DaoModele<Associer> implements Dao<Associer> {
 	return new TESTbordel();
 	//aaaa bonjour
 	}
-
+//ffllflf
 }
