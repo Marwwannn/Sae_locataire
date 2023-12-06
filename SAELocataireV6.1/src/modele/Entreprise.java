@@ -2,7 +2,7 @@ package modele;
 
 // Class for Entreprise
 public class Entreprise {
-	private static String siren;
+	private String siren;
 	private String adresse_Entreprise;
 	private String tel_Entreprise;
 	private String mail_Entreprise;
@@ -11,10 +11,15 @@ public class Entreprise {
 		this.adresse_Entreprise = adresse_Entreprise;
 		this.tel_Entreprise = tel_Entreprise;
 		this.mail_Entreprise = mail_Entreprise;
+		this.siren=siren;
 	}
 
 	public String getSiren() {
 		return siren;
+	}
+
+	public void setSiren(String siren) {
+		this.siren = siren;
 	}
 
 	public String getAdresse_Entreprise() {

@@ -5,15 +5,14 @@ public class Assurance {
 	private String tarifInitial;
 	private String typeAssurance;
 	private String dateEffetDebut;
-	private static int idBienImm;
-	private static int idBatiment;
+	private static String idBienImm;
+	private static String idBatiment;
 
-	public Assurance(String numPolice, String tarifInitial, String typeAssurance, String dateEffetDebut,
-			int idBienImm, int idBatiment) {
-		this.numPolice = numPolice;
+	public Assurance(String tarifInitial, String typeAssurance, String dateEffetDebut, String numPolice) {
 		this.tarifInitial = tarifInitial;
 		this.typeAssurance = typeAssurance;
 		this.dateEffetDebut = dateEffetDebut;
+		this.numPolice = numPolice;
 
 	}
 
@@ -49,12 +48,12 @@ public class Assurance {
 		this.dateEffetDebut = dateEffetDebut;
 	}
 
-	public int getIdBienImm() {
+	public String getIdBienImm() {
 		return idBienImm;
 	}
 
 
-	public int getIdBatiment() {
+	public String getIdBatiment() {
 		return idBatiment;
 	}
 

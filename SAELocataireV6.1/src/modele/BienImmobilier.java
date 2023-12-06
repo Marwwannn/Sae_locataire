@@ -1,19 +1,20 @@
 package modele;
 // Class for Bien_Immobilier
 public class BienImmobilier {
-	private static String id_Bien_Imm;
+	private String idBienImm;
 	private double surface;
 	private String mode_Chauffage;
 	private String mode_Eau;
 	private int nb_Piece;
 	private String type_Bien;
 	private String nom_Proprio;
-	private static String identifiant;
+	private String identifiant;
 	private String etage;
 	private static String id_Batiment;
 
-	public BienImmobilier(String id_Bien_Imm, double surface, String mode_Chauffage, String mode_Eau, int nb_Piece,
-			String type_Bien, String nom_Proprio, String identifiant, String etage, String id_Batiment) {
+	public BienImmobilier(String idBienImm, double surface, String mode_Chauffage, String mode_Eau, int nb_Piece,
+			String type_Bien, String nom_Proprio, String identifiant, String etage) {
+		this.identifiant=identifiant;
 		this.surface = surface;
 		this.mode_Chauffage = mode_Chauffage;
 		this.mode_Eau = mode_Eau;
@@ -21,12 +22,16 @@ public class BienImmobilier {
 		this.type_Bien = type_Bien;
 		this.nom_Proprio = nom_Proprio;
 		this.etage = etage;
+		this.idBienImm= idBienImm;
 	}
 
 	public String getId_Bien_Imm() {
-		return id_Bien_Imm;
+		return idBienImm;
 	}
 
+	public void setIdBienImm(String idBienImm) {
+		this.idBienImm = idBienImm;
+	}
 
 	public double getSurface() {
 		return surface;
@@ -78,6 +83,10 @@ public class BienImmobilier {
 
 	public String getIdentifiant() {
 		return identifiant;
+	}
+
+	public void setIdentifiant(String identifiant) {
+		this.identifiant = identifiant;
 	}
 
 	public String getEtage() {

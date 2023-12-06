@@ -2,33 +2,31 @@ package modele;
 
 public class Facture {
 	private static String siren;
-	private static String idFacture;
+	private String idFacture;
 	private double prix;
 	private String typeEntretien;
 	private String dateFacture;
 	private static String idBienImm;
 	private static String idBatiment;
 
-	public Facture(String siren, int idFacture, double prix, String typeEntretien, String dateFacture,
-			int idBienImm, int idBatiment) {
-		this.siren = siren;
+	public Facture(String idFacture,double prix, String typeEntretien, String dateFacture) {
 		this.prix = prix;
 		this.typeEntretien = typeEntretien;
 		this.dateFacture = dateFacture;
+		this.idFacture=idFacture;
 	}
 
 	public String getSiren() {
 		return siren;
 	}
 
-	public void setSiren(String siren) {
-		this.siren = siren;
-	}
-
 	public String getIdFacture() {
 		return idFacture;
 	}
 
+	public void setidFacture(String idFacture) {
+		this.idFacture = idFacture;
+	}
 
 	public double getPrix() {
 		return prix;

@@ -1,7 +1,5 @@
 package modele;
 
-import java.util.Date;
-
 public class Associer {
 	private String dateDebutContrat;
 	private static String idLocataire;
@@ -10,7 +8,7 @@ public class Associer {
 	private int caution;
 
 
-	public Associer(String dateDebutContrat, String idLocataire, String dateEntree, String dateSortie, int caution) {
+	public Associer(String dateDebutContrat, String dateEntree, String dateSortie, int caution) {
 		this.dateDebutContrat = dateDebutContrat;
 		this.dateEntree = dateEntree;
 		this.dateSortie = dateSortie;
