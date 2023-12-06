@@ -18,6 +18,6 @@ public class RequeteSelectAssuranceByNumPolice extends Requete<Assurance> {
 
     @Override
     public void parametres(PreparedStatement prSt, Assurance data) throws SQLException {
-        prSt.set(1, data.getNumPolice());
+        prSt.setString(1, data.getNumPolice());
     }
 }

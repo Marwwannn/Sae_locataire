@@ -1,14 +1,14 @@
 package modele;
 
 public class Assurance {
-	private int numPolice;
+	private String numPolice;
 	private String tarifInitial;
 	private String typeAssurance;
 	private String dateEffetDebut;
 	private static int idBienImm;
 	private static int idBatiment;
 
-	public Assurance(int numPolice, String tarifInitial, String typeAssurance, String dateEffetDebut,
+	public Assurance(String numPolice, String tarifInitial, String typeAssurance, String dateEffetDebut,
 			int idBienImm, int idBatiment) {
 		this.numPolice = numPolice;
 		this.tarifInitial = tarifInitial;
@@ -17,11 +17,11 @@ public class Assurance {
 
 	}
 
-	public int getNumPolice() {
+	public String getNumPolice() {
 		return numPolice;
 	}
 
-	public void setNumPolice(int numPolice) {
+	public void setNumPolice(String numPolice) {
 		this.numPolice = numPolice;
 	}
 
