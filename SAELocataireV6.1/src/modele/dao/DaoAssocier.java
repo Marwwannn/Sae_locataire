@@ -44,18 +44,7 @@ public class DaoAssocier extends DaoModele<Associer> implements Dao<Associer> {
 
 	@Override
 	protected Associer creerInstance(ResultSet curseur) throws SQLException {
-		boolean caution = true;
-		if(curseur.getString("caution") == "0") {
-			 caution = false;
-		}
-		DaoLocataire dl= new DaoLocataire();
-		DaoContrat_Location da = new DaoContrat_Location();
-		Locataire
-		
-		Associer cr= new Associer(curseur.getDate("dateDebutContrat").toString(), curseur.getString("idLocataire"), curseur.getString("dateEntree").toString(), curseur.getString("dateSortie").toString(), caution,"",  "");
-		 
-				//Contrat_Location contratLocation Locataire locataire
-		return null;
+	
 	}
 
 }
