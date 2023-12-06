@@ -1,21 +1,26 @@
 package modele;
 
 public class Compteur {
-	private static String idCompteur;
+	private String idCompteur;
 	private String dateReleve;
 	private String typeCompteur;
 	private double valeur;
 	private static String idBienImm;
 
 
-	public Compteur(int idCompteur, String dateReleve, String typeCompteur, double valeur, int idBienImm) {
+	public Compteur(String idCompteur,String dateReleve, String typeCompteur, double valeur) {
 		this.dateReleve = dateReleve;
 		this.typeCompteur = typeCompteur;
 		this.valeur = valeur;
+		this.idCompteur=idCompteur;
 	}
 
 	public String getIdCompteur() {
 		return idCompteur;
+	}
+
+	public void setIdCompteur(String idCompteur) {
+		this.idCompteur = idCompteur;
 	}
 
 	public String getDateReleve() {

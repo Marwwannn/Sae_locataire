@@ -1,17 +1,22 @@
 package modele;
 
 public class HistoriquePaiement {
-	private static String idHistPaiement;
+	private String idHistPaiement;
 	private String stocker;
 	private String dateDebutContrat;
 
-	public HistoriquePaiement(int idHistPaiement, String stocker, String dateDebutContrat) {
+	public HistoriquePaiement(String idHistPaiement,String stocker, String dateDebutContrat) {
 		this.stocker = stocker;
 		this.dateDebutContrat = dateDebutContrat;
+		this.idHistPaiement=idHistPaiement;
 	}
 
 	public String getIdHistPaiement() {
 		return idHistPaiement;
+	}
+
+	public void setIdHistPaiement(String idHistPaiement) {
+		this.idHistPaiement = idHistPaiement;
 	}
 
 	public String getStocker() {

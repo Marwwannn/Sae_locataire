@@ -12,12 +12,12 @@ public class ContratLocation {
 	private double chargesProvisionnelles;
 	private static String idICC;
 	private String valeurICC;
-	private static int idBienImm;
+	private static String idBienImm;
 
 	public ContratLocation(String dateDebutContrat, double montant, String montantDernierLoyer,
 			String dateVersementLoyer, String depotGarantie, String dateRevision,
 			String periodicitePaiement, String dateFinContrat, double chargesProvisionnelles,
-			String idICC, String valeurICC, int idBienImm) {
+			String idICC, String valeurICC) {
 		this.dateDebutContrat = dateDebutContrat;
 		this.montant = montant;
 		this.montantDernierLoyer = montantDernierLoyer;
@@ -114,7 +114,7 @@ public class ContratLocation {
 		this.valeurICC = valeurICC;
 	}
 
-	public int getIdBienImm() {
+	public String getIdBienImm() {
 		return idBienImm;
 	}
 }

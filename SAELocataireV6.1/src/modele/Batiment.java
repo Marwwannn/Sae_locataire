@@ -2,23 +2,28 @@ package modele;
 
 // Class for Batiment
 public class Batiment {
-	private static String id_Batiment;
+	private String idBatiment;
 	private String regime_Juridique;
 	private String adresse;
 	private String date_Construction;
 	private String equip_Acces_Tech;
 	private String enum_Parties_Communes;
 
-	public Batiment(String id_Batiment, String regime_Juridique, String adresse, String date_Construction, String equip_Acces_Tech, String enum_Parties_Communes) {
+	public Batiment(String idBatiment, String regime_Juridique, String adresse, String date_Construction, String equip_Acces_Tech, String enum_Parties_Communes) {
 		this.regime_Juridique = regime_Juridique;
 		this.adresse = adresse;
 		this.date_Construction = date_Construction;
 		this.equip_Acces_Tech = equip_Acces_Tech;
 		this.enum_Parties_Communes = enum_Parties_Communes;
+		this.idBatiment = idBatiment;
 	}
 
 	public String getId_Batiment() {
-		return id_Batiment;
+		return idBatiment;
+	}
+
+	public void setIdBatiment(String idBatiment) {
+		this.idBatiment = idBatiment;
 	}
 
 	public String getRegime_Juridique() {

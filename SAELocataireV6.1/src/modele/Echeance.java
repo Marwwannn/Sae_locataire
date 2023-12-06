@@ -6,7 +6,7 @@ public class Echeance {
 	private double montant;
 
 
-	public Echeance(int numPolice, String dateEcheance, double montant) {
+	public Echeance(String dateEcheance, double montant) {
 		this.dateEcheance = dateEcheance;
 		this.montant = montant;
 	}

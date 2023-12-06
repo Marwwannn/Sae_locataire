@@ -1,7 +1,7 @@
 package modele;
 
 public class Charges {
-	private static String idBienImm;
+	private String idBienImm;
 	private static String idCharges;
 	private double montant;
 	private String dateCharge;
@@ -9,12 +9,13 @@ public class Charges {
 	private String pourcentagePartEntretien;
 
 
-	public Charges(int idBienImm, int idCharges, double montant, String dateCharge, String typeCharge,
+	public Charges(String idBienImm,double montant, String dateCharge, String typeCharge,
 			String pourcentagePartEntretien) {
 		this.montant = montant;
 		this.dateCharge = dateCharge;
 		this.typeCharge = typeCharge;
 		this.pourcentagePartEntretien = pourcentagePartEntretien;
+		this.idBienImm = idBienImm;
 	}
 
 	public String getIdBienImm() {
@@ -32,6 +33,11 @@ public class Charges {
 	public void setMontant(double montant) {
 		this.montant = montant;
 	}
+
+	public void setIdBienImm(String idBienImm) {
+		this.idBienImm = idBienImm;
+	}
+
 
 	public String getDateCharge() {
 		return dateCharge;

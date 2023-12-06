@@ -11,7 +11,7 @@ public class Diagnostic {
 	private static String idBienImm;
 
 	public Diagnostic(String refDiagnostic, String typeDiagnostic, String diagnostiqueur, String dateVisite,
-			String dateValidite, String natureTravaux, String depensesReparations, int idBienImm) {
+			String dateValidite, String natureTravaux, String depensesReparations) {
 		this.refDiagnostic = refDiagnostic;
 		this.typeDiagnostic = typeDiagnostic;
 		this.diagnostiqueur = diagnostiqueur;

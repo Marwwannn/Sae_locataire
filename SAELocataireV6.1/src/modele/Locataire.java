@@ -2,25 +2,30 @@ package modele;
 
 // Class for Locataire
 public class Locataire {
-	private static String id_Locataire;
+	private String id_Locataire;
 	private String nom;
 	private String prenom;
 	private String telephone;
 	private String mail;
 	private String adresse;
-	private int code_Postal;
+	private String code_Postal;
 
-	public Locataire(String id_Locataire, String nom, String prenom, String telephone, String mail, String adresse, int code_Postal) {
+	public Locataire(String idLocataire,String nom, String prenom, String telephone, String mail, String adresse, String code_Postal) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.telephone = telephone;
 		this.mail = mail;
 		this.adresse = adresse;
 		this.code_Postal = code_Postal;
+		this.id_Locataire=idLocataire;
 	}
 
-	public String getIdLocataire() {
+	public String getId_Locataire() {
 		return id_Locataire;
+	}
+
+	public void setIdLocataire(String idLocataire) {
+		this.id_Locataire = idLocataire;
 	}
 
 	public String getNom() {
@@ -63,11 +68,11 @@ public class Locataire {
 		this.adresse = adresse;
 	}
 
-	public int getCode_Postal() {
+	public String getCode_Postal() {
 		return code_Postal;
 	}
 
-	public void setCode_Postal(int code_Postal) {
+	public void setCode_Postal(String code_Postal) {
 		this.code_Postal = code_Postal;
 	}
 }

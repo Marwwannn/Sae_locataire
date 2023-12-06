@@ -2,11 +2,10 @@ package modele;
 
 public class Contenir {
 	private static String idCaution;
-	private String dateDebutContrat;
+	private static String dateDebutContrat;
 
 
-	public Contenir(int idCaution, String dateDebutContrat) {
-		this.dateDebutContrat = dateDebutContrat;
+	public Contenir() {
 	}
 
 	public String getIdCaution() {
@@ -15,9 +14,5 @@ public class Contenir {
 
 	public String getDateDebutContrat() {
 		return dateDebutContrat;
-	}
-
-	public void setDateDebutContrat(String dateDebutContrat) {
-		this.dateDebutContrat = dateDebutContrat;
 	}
 }
