@@ -38,9 +38,20 @@ public class DaoCompteur extends DaoModele<Compteur> implements Dao<Compteur> {
 		
 	}
 
-	@Override
-	protected Compteur creerInstance(ResultSet curseur) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    protected Compteur creerInstance(ResultSet curseur) throws SQLException {
+        // Récupérer les valeurs de la base de données
+        String idCompteur = curseur.getString("Id_Compteur");
+        String dateReleve = curseur.getString("Date_Releve");
+        String typeCompteur = curseur.getString("Type_Compteur");
+        double valeur = curseur.getDouble("Valeur");
+
+        // Créer et retourner une nouvelle instance de Compteur
+        Compteur compteur = new Compteur(idCompteur, dateReleve, typeCompteur, valeur);
+        
+        
+        String idBienImm = curseur.getString("Id_Bien_Imm");
+        compteur.setIdBienImm(idBienImm);
+
+        return compteur;
+    }
 }

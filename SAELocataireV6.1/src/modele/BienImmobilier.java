@@ -13,7 +13,7 @@ public class BienImmobilier {
 	private static String id_Batiment;
 
 	public BienImmobilier(String idBienImm, double surface, String mode_Chauffage, String mode_Eau, int nb_Piece,
-			String type_Bien, String nom_Proprio, String identifiant, String etage) {
+			String type_Bien, String nom_Proprio, String identifiant, String etage,String id_Batiment) {
 		this.identifiant=identifiant;
 		this.surface = surface;
 		this.mode_Chauffage = mode_Chauffage;
@@ -23,6 +23,7 @@ public class BienImmobilier {
 		this.nom_Proprio = nom_Proprio;
 		this.etage = etage;
 		this.idBienImm= idBienImm;
+		this.id_Batiment=id_Batiment;
 	}
 
 	public String getId_Bien_Imm() {

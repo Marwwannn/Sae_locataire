@@ -51,4 +51,9 @@ public class Compteur {
 		return idBienImm;
 	}
 
+	public void setIdBienImm(String idBienImm) {
+		 this.idBienImm=idBienImm;
+		
+	}
+
 }

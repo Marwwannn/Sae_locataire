@@ -38,10 +38,18 @@ public class DaoCharges extends DaoModele<Charges> implements Dao<Charges> {
 		
 	}
 
+	
 	@Override
-	protected Charges creerInstance(ResultSet curseur) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    protected Charges creerInstance(ResultSet curseur) throws SQLException {
+        // Récupérer les valeurs de la base de données
+        String idBienImm = curseur.getString("Id_Bien_Imm");
+        double montant = curseur.getDouble("Montant");
+        String dateCharge = curseur.getString("Date_Charge");
+        String typeCharge = curseur.getString("Type_Charge");
+        String pourcentagePartEntretien = curseur.getString("Pourcentage_Part_Entretien");
 
+        // Créer et retourner une nouvelle instance de Charges
+        return new Charges(idBienImm, montant, dateCharge, typeCharge, pourcentagePartEntretien);
+    }
 }
+
