@@ -45,8 +45,8 @@ public class DaoAssurance extends DaoModele<Assurance> implements Dao<Assurance>
 	        curseur.getString("tarifInitial"),
 	        curseur.getString("typeAssurance"),
 	        curseur.getString("dateEffetDebut"),
-	        curseur.getInt("idBienImm"),
-	        curseur.getInt("idBatiment")
+	        curseur.getString("idBienImm"),
+	        curseur.getString("idBatiment")
 	    );
 
 	    // You may want to set other properties of Assurance based on your data model

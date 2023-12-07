@@ -8,12 +8,13 @@ public class Assurance {
 	private static String idBienImm;
 	private static String idBatiment;
 
-	public Assurance(String tarifInitial, String typeAssurance, String dateEffetDebut, String numPolice) {
+	public Assurance(String tarifInitial, String typeAssurance, String dateEffetDebut, String numPolice,String idBienImm,String idBatiment) {
 		this.tarifInitial = tarifInitial;
 		this.typeAssurance = typeAssurance;
 		this.dateEffetDebut = dateEffetDebut;
 		this.numPolice = numPolice;
-
+		this.idBienImm=idBienImm;
+		this.idBatiment=idBatiment;
 	}
 
 	public String getNumPolice() {
