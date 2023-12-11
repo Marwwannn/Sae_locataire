@@ -38,10 +38,22 @@ public class DaoEntreprise extends DaoModele<Entreprise> implements Dao<Entrepri
 		
 	}
 
+	
 	@Override
-	protected Entreprise creerInstance(ResultSet curseur) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    protected Entreprise creerInstance(ResultSet curseur) throws SQLException {
+        Entreprise entreprise = null;
+        try {
+            entreprise = new Entreprise(
+                    curseur.getString("SIREN"),
+                    curseur.getString("ADRESSE_ENTREPRISE"),
+                    curseur.getString("TEL_ENTREPRISE"),
+                    curseur.getString("MAIL_ENTREPRISE")
+            );
+        } catch (SQLException e) {
+            // Handle the exception appropriately, e.g., log or throw a custom exception
+            e.printStackTrace();
+        }
+        return entreprise;
+    }
 
 }

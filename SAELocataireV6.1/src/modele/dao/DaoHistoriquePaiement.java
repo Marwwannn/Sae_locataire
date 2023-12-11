@@ -39,9 +39,20 @@ public class DaoHistoriquePaiement extends DaoModele<HistoriquePaiement> impleme
 	}
 
 	@Override
-	protected HistoriquePaiement creerInstance(ResultSet curseur) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    protected HistoriquePaiement creerInstance(ResultSet curseur) throws SQLException {
+        HistoriquePaiement historiquePaiement = null;
+        try {
+            historiquePaiement = new HistoriquePaiement(
+                    curseur.getString("ID_HIST_PAIEMENT"),
+                    curseur.getString("STOCKER"),
+                    curseur.getString("DATE_DEBUT_CONTRAT")
+            );
+        } catch (SQLException e) {
+            // Handle the exception appropriately, e.g., log or throw a custom exception
+            e.printStackTrace();
+        }
+        return historiquePaiement;
+    }
+
 
 }

@@ -38,10 +38,23 @@ public class DaoGarantCaution extends DaoModele<GarantCaution> implements Dao<Ga
 		
 	}
 
+	
 	@Override
-	protected GarantCaution creerInstance(ResultSet curseur) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+    protected GarantCaution creerInstance(ResultSet curseur) throws SQLException {
+        GarantCaution garantCaution = null;
+        try {
+            garantCaution = new GarantCaution(
+                    curseur.getString("ID_CAUTION"),
+                    curseur.getString("NOM"),
+                    curseur.getString("PRENOM"),
+                    curseur.getString("NUMERO_TELEPHONE")
+            );
+        } catch (SQLException e) {
+            // Handle the exception appropriately, e.g., log or throw a custom exception
+            e.printStackTrace();
+        }
+        return garantCaution;
+    }
 }
+
+

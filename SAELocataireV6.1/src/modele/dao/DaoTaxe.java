@@ -40,8 +40,21 @@ public class DaoTaxe extends DaoModele<Taxe> implements Dao<Taxe> {
 
 	@Override
 	protected Taxe creerInstance(ResultSet curseur) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+        Taxe taxe = null;
+        try {
+            taxe = new Taxe(
+                    curseur.getString("ID_TAXE_FONCIERE"),
+                    curseur.getDouble("BASE_IMPOSITION"),
+                    curseur.getDouble("TYPE_TAXE"),
+                    curseur.getDouble("TAUX"),
+                    curseur.getString("DATE_TAXE")
+            );
+        } catch (SQLException e) {
+            // Handle the exception appropriately, e.g., log or throw a custom exception
+            e.printStackTrace();
+        }
+        return taxe;
+    }
+
 
 }

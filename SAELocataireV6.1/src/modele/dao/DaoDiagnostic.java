@@ -39,9 +39,23 @@ public class DaoDiagnostic extends DaoModele<Diagnostic> implements Dao<Diagnost
 	}
 
 	@Override
-	protected Diagnostic creerInstance(ResultSet curseur) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	protected Diagnostic creerInstance(ResultSet cursor) throws SQLException {
+	    Diagnostic diagnostic = null;
+	    try {
+	        diagnostic = new Diagnostic(
+	                cursor.getString("REF_DIAGNOSTIC"),
+	                cursor.getString("TYPE_DIAGNOSTIC"),
+	                cursor.getString("DIAGNOSTIQUEUR"),
+	                cursor.getString("DATE_VISITE"),
+	                cursor.getString("DATE_VALIDITE"),
+	                cursor.getString("NATURE_TRAVAUX"),
+	                cursor.getString("DEPENSES_REPARATIONS")
+	        );
+	    } catch (SQLException e) {
+	        // Handle the exception appropriately, e.g., log or throw a custom exception
+	        e.printStackTrace();
+	    }
+	    return diagnostic;
 	}
 
 }

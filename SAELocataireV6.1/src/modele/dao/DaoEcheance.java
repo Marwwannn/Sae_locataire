@@ -39,10 +39,19 @@ public class DaoEcheance extends DaoModele<Echeance> implements Dao<Echeance> {
 	}
 
 	@Override
-	protected Echeance creerInstance(ResultSet curseur) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    protected Echeance creerInstance(ResultSet curseur) throws SQLException {
+        Echeance echeance = null;
+        try {
+            echeance = new Echeance(
+                    curseur.getString("DATE_ECHEANCE"),
+                    curseur.getDouble("MONTANT")
+            );
+        } catch (SQLException e) {
+            // Handle the exception appropriately, e.g., log or throw a custom exception
+            e.printStackTrace();
+        }
+        return echeance;
+    }
 
 
 }

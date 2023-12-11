@@ -38,9 +38,20 @@ public class DaoFacture extends DaoModele<Facture> implements Dao<Facture> {
 		
 	}
 
-	@Override
-	protected Facture creerInstance(ResultSet curseur) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	 @Override
+    protected Facture creerInstance(ResultSet curseur) throws SQLException {
+        Facture facture = null;
+        try {
+            facture = new Facture(
+                    curseur.getString("ID_FACTURE"),
+                    curseur.getDouble("PRIX"),
+                    curseur.getString("TYPE_ENTRETIEN"),
+                    curseur.getString("DATE_FACTURE")
+            );
+        } catch (SQLException e) {
+            // Handle the exception appropriately, e.g., log or throw a custom exception
+            e.printStackTrace();
+        }
+        return facture;
+    }
 }
