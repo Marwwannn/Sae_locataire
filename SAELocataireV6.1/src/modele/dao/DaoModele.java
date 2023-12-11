@@ -12,7 +12,7 @@ import select.Requete;
 
 public abstract class DaoModele<T> implements Dao<T> {
 
-    protected abstract T creerInstance(ResultSet curseur) throws SQLException;
+    public abstract T creerInstance(ResultSet curseur) throws SQLException;
 
     protected List<T> select(PreparedStatement prSt) throws SQLException {
         List<T> resultat = new ArrayList<>();
