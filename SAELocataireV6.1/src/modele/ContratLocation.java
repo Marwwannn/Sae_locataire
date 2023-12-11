@@ -113,6 +113,12 @@ public class ContratLocation {
 	public void setValeurICC(String valeurICC) {
 		this.valeurICC = valeurICC;
 	}
+	
+	
+	public void setIdBienImm(String idBien){
+		this.idBienImm=idBien;
+		
+	}
 
 	public String getIdBienImm() {
 		return idBienImm;
