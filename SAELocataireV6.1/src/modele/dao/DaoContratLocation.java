@@ -64,5 +64,5 @@ public class DaoContratLocation extends DaoModele<ContratLocation> implements Da
 	        contratLocation.setIdBienImm(idBienImm);
 
 	        return contratLocation;
-	    }s
+	    }
 }

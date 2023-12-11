@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import SQL.CictOracleDataSource;
-import modele.dao.requetes.Requete;
+import select.Requete;
 
 public abstract class DaoModele<T> implements Dao<T> {
 
