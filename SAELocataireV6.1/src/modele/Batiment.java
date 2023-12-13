@@ -1,68 +1,99 @@
 package modele;
 
-// Class for Batiment
-public class Batiment {
-	private String idBatiment;
-	private String regime_Juridique;
-	private String adresse;
-	private String date_Construction;
-	private String equip_Acces_Tech;
-	private String enum_Parties_Communes;
+import java.util.Objects;
 
-	public Batiment(String idBatiment, String regime_Juridique, String adresse, String date_Construction, String equip_Acces_Tech, String enum_Parties_Communes) {
-		this.regime_Juridique = regime_Juridique;
-		this.adresse = adresse;
-		this.date_Construction = date_Construction;
-		this.equip_Acces_Tech = equip_Acces_Tech;
-		this.enum_Parties_Communes = enum_Parties_Communes;
+public class Batiment {
+	private final int idBatiment;
+	private  String regimeJuridique;
+	private  String adresse;
+	private  String dateConstruction;
+	private  String equipementTechnologies;
+	private  String enumerationPartCommunes;
+
+	public Batiment(int idBatiment, String regimeJuridique, String adresse,
+			String dateConstruction, String equipementTechnologies, String enumerationPartCommunes) {
 		this.idBatiment = idBatiment;
+		this.regimeJuridique = regimeJuridique;
+		this.adresse = adresse;
+		this.dateConstruction = dateConstruction;
+		this.equipementTechnologies = equipementTechnologies;
+		this.enumerationPartCommunes = enumerationPartCommunes;
 	}
 
-	public String getId_Batiment() {
+	public int getIdBatiment() {
 		return idBatiment;
 	}
 
-	public void setIdBatiment(String idBatiment) {
-		this.idBatiment = idBatiment;
-	}
-
-	public String getRegime_Juridique() {
-		return regime_Juridique;
-	}
-
-	public void setRegime_Juridique(String regime_Juridique) {
-		this.regime_Juridique = regime_Juridique;
+	public String getRegimeJuridique() {
+		return regimeJuridique;
 	}
 
 	public String getAdresse() {
 		return adresse;
 	}
 
+	public String getDateConstruction() {
+		return dateConstruction;
+	}
+
+	public String getEquipementTechnologies() {
+		return equipementTechnologies;
+	}
+
+	public String getEnumerationPartCommunes() {
+		return enumerationPartCommunes;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(idBatiment);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof Batiment)) {
+			return false;
+		}
+		Batiment other = (Batiment) obj;
+		return Objects.equals(idBatiment, other.idBatiment);
+	}
+
+
+	/**
+	 * @param regimeJuridique the regimeJuridique to set
+	 */
+	public void setRegimeJuridique(String regimeJuridique) {
+		this.regimeJuridique = regimeJuridique;
+	}
+
+	/**
+	 * @param adresse the adresse to set
+	 */
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
 
-	public String getDate_Construction() {
-		return date_Construction;
+	/**
+	 * @param dateConstruction the dateConstruction to set
+	 */
+	public void setDateConstruction(String dateConstruction) {
+		this.dateConstruction = dateConstruction;
 	}
 
-	public void setDate_Construction(String date_Construction) {
-		this.date_Construction = date_Construction;
+	/**
+	 * @param equipementTechnologies the equipementTechnologies to set
+	 */
+	public void setEquipementTechnologies(String equipementTechnologies) {
+		this.equipementTechnologies = equipementTechnologies;
 	}
 
-	public String getEquip_Acces_Tech() {
-		return equip_Acces_Tech;
-	}
-
-	public void setEquip_Acces_Tech(String equip_Acces_Tech) {
-		this.equip_Acces_Tech = equip_Acces_Tech;
-	}
-
-	public String getEnum_Parties_Communes() {
-		return enum_Parties_Communes;
-	}
-
-	public void setEnum_Parties_Communes(String enum_Parties_Communes) {
-		this.enum_Parties_Communes = enum_Parties_Communes;
+	/**
+	 * @param enumerationPartCommunes the enumerationPartCommunes to set
+	 */
+	public void setEnumerationPartCommunes(String enumerationPartCommunes) {
+		this.enumerationPartCommunes = enumerationPartCommunes;
 	}
 }

@@ -1,63 +1,101 @@
 package modele;
 
+import java.util.Date;
+import java.util.Objects;
+
 public class Taxe {
-	private String idTaxeFonciere;
+	private final int idTaxeFonciere;
 	private double baseImposition;
 	private double typeTaxe;
 	private double taux;
-	private String dateTaxe;
-	private static String idBienImm;
+	private Date dateTaxe;
+	private Bien_Immobilier bienImmobilier;
 
-	public Taxe(String idTaxeFonciere, double baseImposition, double typeTaxe, double taux, String dateTaxe) {
+	public Taxe(int idTaxeFonciere, double baseImposition, double typeTaxe,
+			double taux, Date dateTaxe, Bien_Immobilier bienImmobilier) {
+		this.idTaxeFonciere = idTaxeFonciere;
 		this.baseImposition = baseImposition;
 		this.typeTaxe = typeTaxe;
 		this.taux = taux;
 		this.dateTaxe = dateTaxe;
-		this.idTaxeFonciere=idTaxeFonciere;
+		this.bienImmobilier = bienImmobilier;
 	}
 
-	public String getIdTaxeFonciere() {
+	public int getIdTaxeFonciere() {
 		return idTaxeFonciere;
-	}
-
-	public void setidTaxeFonciere(String idTaxeFonciere) {
-		this.idTaxeFonciere = idTaxeFonciere;
 	}
 
 	public double getBaseImposition() {
 		return baseImposition;
 	}
 
-	public void setBaseImposition(double baseImposition) {
-		this.baseImposition = baseImposition;
-	}
-
 	public double getTypeTaxe() {
 		return typeTaxe;
-	}
-
-	public void setTypeTaxe(double typeTaxe) {
-		this.typeTaxe = typeTaxe;
 	}
 
 	public double getTaux() {
 		return taux;
 	}
 
+	public Date getDateTaxe() {
+		return dateTaxe;
+	}
+
+	public Bien_Immobilier getBienImmobilier() {
+		return bienImmobilier;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(idTaxeFonciere);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof Taxe)) {
+			return false;
+		}
+		Taxe other = (Taxe) obj;
+		return Objects.equals(idTaxeFonciere, other.idTaxeFonciere);
+	}
+
+
+
+	/**
+	 * @param baseImposition the baseImposition to set
+	 */
+	public void setBaseImposition(double baseImposition) {
+		this.baseImposition = baseImposition;
+	}
+
+	/**
+	 * @param typeTaxe the typeTaxe to set
+	 */
+	public void setTypeTaxe(double typeTaxe) {
+		this.typeTaxe = typeTaxe;
+	}
+
+	/**
+	 * @param taux the taux to set
+	 */
 	public void setTaux(double taux) {
 		this.taux = taux;
 	}
 
-	public String getDateTaxe() {
-		return dateTaxe;
-	}
-
-	public void setDateTaxe(String dateTaxe) {
+	/**
+	 * @param dateTaxe the dateTaxe to set
+	 */
+	public void setDateTaxe(Date dateTaxe) {
 		this.dateTaxe = dateTaxe;
 	}
 
-	public String getIdBienImm() {
-		return idBienImm;
+	/**
+	 * @param bienImmobilier the bienImmobilier to set
+	 */
+	public void setBienImmobilier(Bien_Immobilier bienImmobilier) {
+		this.bienImmobilier = bienImmobilier;
 	}
-
 }

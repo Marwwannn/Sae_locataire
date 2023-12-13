@@ -1,75 +1,81 @@
 package vue;
 
-import java.awt.Color;
-import java.awt.Component;
 import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import java.awt.GridLayout;
+import java.awt.BorderLayout;
+import java.awt.GridBagLayout;
+import javax.swing.JLabel;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import javax.swing.JTextField;
+import javax.swing.JScrollPane;
+import java.awt.Component;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import controle.GestionDetailPropriete2;
-import controle.GestionListeLocataire;
+import javax.swing.table.TableModel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.ComboBoxModel;
+import javax.swing.JButton;
 
 public class FenetreDetailsPropriete2 extends JInternalFrame {
-	
-	private GestionDetailPropriete2 gestionClic;
-    private JPanel contentPane;
-    private JTextField champAdresse;
-    private JTextField champType;
-    private JTextField champCompteur;
-    private JTextField champSurface;
-    private JTextField champEquipements;
-    private JTextField champDateDebut;
-    private JTextField champDateFin;
-    private JTextField champNombrePieces;
-    private JTable table;
-    private JTextField champStatutOccupation;
-    private JTextField champContratsServices;
-    private JTextField champCommentaires;
-    private JTable tablePaiements;
-    private JTable tableHistorique;
 
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    FenetreDetailsPropriete2 frame = new FenetreDetailsPropriete2();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
+	private JPanel contentPane;
+	private JTextField champAdresse;
+	private JTextField champType;
+	private JTextField champCompteur;
+	private JTextField champSurface;
+	private JTextField champEquipements;
+	private JTextField champDateDebut;
+	private JTextField champDateFin;
+	private JTextField champNombrePieces;
+	private JTable table;
+	private JTextField champStatutOccupation;
+	private JTextField champContratsServices;
+	private JTextField champCommentaires;
+	private JTable tablePaiements;
+	private JTable tableHistorique;
 
-    public FenetreDetailsPropriete2() {
-    	this.gestionClic = new GestionDetailPropriete2(this);
-        setDefaultCloseOperation(JInternalFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 1080, 920);
-        contentPane = new JPanel();
-        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        setContentPane(contentPane);
-        GridBagLayout gbl_contentPane = new GridBagLayout();
-        gbl_contentPane.columnWidths = new int[] { 266, 40, 266 };
-        gbl_contentPane.rowHeights = new int[] { 0, 0, 0, 30 };
-        gbl_contentPane.columnWeights = new double[] { 1.0, 0.0, 0.0 };
-        gbl_contentPane.rowWeights = new double[] { 0.0, 0.0, 1.0 };
-        contentPane.setLayout(gbl_contentPane);
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					FenetreDetailsPropriete2 frame = new FenetreDetailsPropriete2();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public FenetreDetailsPropriete2() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 971, 648);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		GridBagLayout gbl_contentPane = new GridBagLayout();
+		gbl_contentPane.columnWidths = new int[] {266, 40, 266};
+		gbl_contentPane.rowHeights = new int[] {0, 0, 30};
+		gbl_contentPane.columnWeights = new double[]{0.0, 0.0, 0.0};
+		gbl_contentPane.rowWeights = new double[]{0.0, 0.0};
+		contentPane.setLayout(gbl_contentPane);
 		
 		JPanel panelGauche = new JPanel();
 		GridBagConstraints gbc_panelGauche = new GridBagConstraints();
@@ -427,21 +433,14 @@ public class FenetreDetailsPropriete2 extends JInternalFrame {
         ));
         scrollPaneHistoriqueReparations_1.setViewportView(tableHistorique);
         
-        JPanel panelButton = new JPanel();
-        GridBagConstraints gbc_panelButton = new GridBagConstraints();
-        gbc_panelButton.insets = new Insets(0, 0, 5, 5);
-        gbc_panelButton.fill = GridBagConstraints.BOTH;
-        gbc_panelButton.gridx = 0;
-        gbc_panelButton.gridy = 2;
-        contentPane.add(panelButton, gbc_panelButton);
-        
-        JButton btnAnnuler = new JButton("Annuler");
-        btnAnnuler.setHorizontalAlignment(SwingConstants.LEFT);
-        panelButton.add(btnAnnuler);
-        btnAnnuler.addActionListener(this.gestionClic);
-        
         JButton btnAutreSection = new JButton("Autre Section");
-        btnAutreSection.setHorizontalAlignment(SwingConstants.RIGHT);
-        panelButton.add(btnAutreSection);
-    }
+        GridBagConstraints gbc_btnAutreSection = new GridBagConstraints();
+        gbc_btnAutreSection.fill = GridBagConstraints.HORIZONTAL;
+        gbc_btnAutreSection.gridwidth = 3;
+        gbc_btnAutreSection.insets = new Insets(0, 0, 0, 5);
+        gbc_btnAutreSection.gridx = 0;
+        gbc_btnAutreSection.gridy = 1;
+        contentPane.add(btnAutreSection, gbc_btnAutreSection);
+	}
+
 }

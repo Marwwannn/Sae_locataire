@@ -1,6 +1,7 @@
 package modele.dao;
 
 import java.sql.ResultSet;
+
 import java.sql.SQLException;
 import java.util.Collection;
 

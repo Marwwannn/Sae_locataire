@@ -1,12 +1,11 @@
 package controle;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 
-public class GestionFenetreBien implements ActionListener {
+public class GestionFenetreBien {
 
     private JInternalFrame fenetreBien;
 
@@ -14,7 +13,6 @@ public class GestionFenetreBien implements ActionListener {
         this.fenetreBien = fenetreBien;
     }
 
-    @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
 
@@ -23,9 +21,6 @@ public class GestionFenetreBien implements ActionListener {
 
             switch (buttonValider.getText()) {
                 case "Valider":
-                    // Ajoutez ici le code à exécuter lorsque le bouton "Valider" est cliqué
-                    break;
-                case "Annuler":
                     fenetreBien.dispose();
                     break;
             }

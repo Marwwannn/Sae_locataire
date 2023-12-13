@@ -1,78 +1,113 @@
 package modele;
 
-// Class for Locataire
+import java.util.Objects;
+
 public class Locataire {
-	private String id_Locataire;
+	private final int idLocataire;
 	private String nom;
 	private String prenom;
 	private String telephone;
 	private String mail;
 	private String adresse;
-	private String code_Postal;
+	private byte codePostal;
 
-	public Locataire(String idLocataire,String nom, String prenom, String telephone, String mail, String adresse, String code_Postal) {
+	public Locataire(int idLocataire, String nom, String prenom, String telephone,
+			String mail, String adresse, byte codePostal) {
+		this.idLocataire = idLocataire;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.telephone = telephone;
 		this.mail = mail;
 		this.adresse = adresse;
-		this.code_Postal = code_Postal;
-		this.id_Locataire=idLocataire;
+		this.codePostal = codePostal;
 	}
 
-	public String getId_Locataire() {
-		return id_Locataire;
-	}
-
-	public void setIdLocataire(String idLocataire) {
-		this.id_Locataire = idLocataire;
+	public int getIdLocataire() {
+		return idLocataire;
 	}
 
 	public String getNom() {
 		return nom;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
 	public String getPrenom() {
 		return prenom;
-	}
-
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
 	}
 
 	public String getTelephone() {
 		return telephone;
 	}
 
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-	}
-
 	public String getMail() {
 		return mail;
-	}
-
-	public void setMail(String mail) {
-		this.mail = mail;
 	}
 
 	public String getAdresse() {
 		return adresse;
 	}
 
+	public byte getCodePostal() {
+		return codePostal;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(idLocataire);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof Locataire)) {
+			return false;
+		}
+		Locataire other = (Locataire) obj;
+		return Objects.equals(idLocataire, other.idLocataire);
+	}
+
+
+
+	/**
+	 * @param nom the nom to set
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	/**
+	 * @param prenom the prenom to set
+	 */
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	/**
+	 * @param telephone the telephone to set
+	 */
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
+	/**
+	 * @param mail the mail to set
+	 */
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+
+	/**
+	 * @param adresse the adresse to set
+	 */
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
 
-	public String getCode_Postal() {
-		return code_Postal;
-	}
-
-	public void setCode_Postal(String code_Postal) {
-		this.code_Postal = code_Postal;
+	/**
+	 * @param codePostal the codePostal to set
+	 */
+	public void setCodePostal(byte codePostal) {
+		this.codePostal = codePostal;
 	}
 }

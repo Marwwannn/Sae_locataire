@@ -1,8 +1,5 @@
 package vue;
-
-import controle.GestionListeLocataire;
 import controle.Locataire;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,10 +9,8 @@ import java.util.List;
 
 public class FenetreListeLocataire extends JInternalFrame {
     private List<Locataire> locataires;
-    private GestionListeLocataire gestionClic;
 
     public FenetreListeLocataire() {
-        this.gestionClic = new GestionListeLocataire(this);
         locataires = new ArrayList<>();
         locataires.add(new Locataire("Doe", "John", "123456789", "john.doe@email.com", "123 Main St", "12345"));
         locataires.add(new Locataire("Smith", "Jane", "987654321", "jane.smith@email.com", "456 Oak St", "67890"));
@@ -59,13 +54,6 @@ public class FenetreListeLocataire extends JInternalFrame {
             }
         });
 
-        JButton btnAnnuler = new JButton("Annuler");
-        btnAnnuler.addActionListener(this.gestionClic);
-
-        btnAnnuler.setHorizontalAlignment(SwingConstants.LEFT);
-        buttonPanel.add(btnAnnuler);
-        buttonPanel.add(supprimerButton);
-
         JButton voirBienButton = new JButton("Voir le bien immobilier concerné");
         voirBienButton.addActionListener(new ActionListener() {
             @Override
@@ -73,13 +61,14 @@ public class FenetreListeLocataire extends JInternalFrame {
                 // Code pour voir le bien immobilier du locataire sélectionné
             }
         });
-        buttonPanel.add(voirBienButton);
 
         buttonPanel.add(modifierButton);
+        buttonPanel.add(supprimerButton);
+        buttonPanel.add(voirBienButton);
 
         mainPanel.add(buttonPanel, BorderLayout.SOUTH);
 
-        getContentPane().add(mainPanel);
+        add(mainPanel);
         setVisible(true);
     }
 
@@ -92,3 +81,4 @@ public class FenetreListeLocataire extends JInternalFrame {
         });
     }
 }
+

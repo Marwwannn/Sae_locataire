@@ -21,7 +21,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import controle.GestionPageAjoutLocataire;
 
-public class PageAjoutLocataire extends JInternalFrame {
+public class PageAjoutLocataire extends JInternalFrame implements ActionListener {
 
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
@@ -133,11 +133,9 @@ public class PageAjoutLocataire extends JInternalFrame {
 		panel_2.setLayout(new BorderLayout(0, 0));
 
 		JButton btnAnnuler = new JButton("Annuler");
-		btnAnnuler.addActionListener(this.gestionClic);
 		panel_2.add(btnAnnuler, BorderLayout.WEST);
 
 		JButton btnValider = new JButton("Valider");
-		btnValider.addActionListener(this.gestionClic);
 		panel_2.add(btnValider, BorderLayout.EAST);
 
 		JPanel panel_3 = new JPanel();
@@ -232,4 +230,12 @@ public class PageAjoutLocataire extends JInternalFrame {
 		
 	}
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getActionCommand().equals("Annuler")) {
+            dispose();
+        } else {
+            gestionClic.actionPerformed(e);
+        }
+    }
 }

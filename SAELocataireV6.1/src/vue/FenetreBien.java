@@ -1,7 +1,7 @@
 package vue;
 
 import java.awt.BorderLayout;
-import java.awt.Font;
+
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
@@ -11,9 +11,10 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
-
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import controle.GestionFenetreBien;
 
 public class FenetreBien extends JInternalFrame {
@@ -31,13 +32,8 @@ public class FenetreBien extends JInternalFrame {
     private JTextField textFieldDateDebut;
 
     private JTable tableLocataires;
-    private JPanel panelButton;
-    private JButton btnAnnuler;
-    private GestionFenetreBien gestionClic;
-    
 
     public FenetreBien() {
-    	this.gestionClic = new GestionFenetreBien(this);
         setTitle("Gestion de Logement");
         setDefaultCloseOperation(JInternalFrame.EXIT_ON_CLOSE);
         setSize(800, 400);
@@ -114,18 +110,14 @@ public class FenetreBien extends JInternalFrame {
         panelAssurance.add(new JLabel("Date d'Effet (Début)"));
         textFieldDateDebut = new JTextField(10);
         panelAssurance.add(textFieldDateDebut);
-        
-        panelButton = new JPanel();
-        panel.add(panelButton, BorderLayout.SOUTH);
-                
-        btnAnnuler = new JButton("Annuler");
-        btnAnnuler.addActionListener(this.gestionClic);
-        panelButton.add(btnAnnuler);
-        
+
         // Bouton Valider en bas
-        JButton btnValider = new JButton("Valider");
-        btnValider.setHorizontalAlignment(SwingConstants.RIGHT);
-        panelButton.add(btnValider);
+        JButton buttonValider = new JButton("Valider");
+        panel.add(buttonValider, BorderLayout.SOUTH);
+        
+        // Associer l'action du bouton Valider au contrôleur
+        GestionFenetreBien gestionFenetreBien = new GestionFenetreBien(this); // Passer la référence à la fenêtre
+        buttonValider.addActionListener(gestionFenetreBien::actionPerformed); // Utilisation de la référence de méthode
 
     }
 

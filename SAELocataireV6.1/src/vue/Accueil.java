@@ -48,25 +48,25 @@ public class Accueil extends JFrame {
         this.gestionClic = new GestionAccueil(this);
         setBackground(new Color(240, 240, 240));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 1200, 1080);
+        setBounds(100, 100, 1080, 720);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        Image image1 = new ImageIcon(this.getClass().getResource("/image7.jpeg")).getImage();
+        //Image image1 = new ImageIcon(this.getClass().getResource("/image7.jpeg")).getImage();
 
         JLabel lblNewLabel_2 = new JLabel("New label");
         lblNewLabel_2.setIcon(new ImageIcon("image/image7.jpeg"));
         lblNewLabel_2.setBounds(54, 84, 561, 245);
         contentPane.add(lblNewLabel_2);
 
-        //JButton btnNewButton = new JButton("Générer nouvelle facture");
-        //btnNewButton.setBounds(539, 339, 145, 27);
-        //contentPane.add(btnNewButton);
+        JButton btnNewButton = new JButton("Générer nouvelle facture");
+        btnNewButton.setBounds(539, 339, 145, 27);
+        contentPane.add(btnNewButton);
 
         JMenuBar menuBar = new JMenuBar();
-        menuBar.setBounds(20, 30, 1200, 22);
+        menuBar.setBounds(20, 30, 692, 22);
         contentPane.add(menuBar);
 
         // Menu "Ajouter/Consulter locataire"
@@ -77,9 +77,9 @@ public class Accueil extends JFrame {
         mntmAjouterLocataire.addActionListener(this.gestionClic);
         mnNewMenu.add(mntmAjouterLocataire);
 
-        //JMenuItem mntmConsulterLocataire = new JMenuItem("Consulter locataire");
-        //mntmConsulterLocataire.addActionListener(this.gestionClic);
-        //mnNewMenu.add(mntmConsulterLocataire);
+        JMenuItem mntmConsulterLocataire = new JMenuItem("Consulter locataire");
+        mntmConsulterLocataire.addActionListener(this.gestionClic);
+        mnNewMenu.add(mntmConsulterLocataire);
 
         // Menu "Ajouter/Consulter Logement"
         JMenu mnNewMenu_1 = new JMenu("Ajouter/Consulter Logement");
@@ -93,26 +93,23 @@ public class Accueil extends JFrame {
         mntmConsulterLogement.addActionListener(this.gestionClic);
         mnNewMenu_1.add(mntmConsulterLogement);
 
-        //Menu "Consulter historique locataire"
-        JMenu mnNewMenu_2 = new JMenu("Consulter liste locataires");
+        // Menu "Consulter historique locataire"
+        JMenu mnNewMenu_2 = new JMenu("Consulter historique locataire");
         menuBar.add(mnNewMenu_2);
 
-        JMenuItem mntmConsultation = new JMenuItem("Liste des locataires");
+        JMenuItem mntmConsultation = new JMenuItem("Consultation");
         mntmConsultation.addActionListener(this.gestionClic);
         mnNewMenu_2.add(mntmConsultation);
 
         // Menu "Gestion facture"
         JMenu mnNewMenu_3 = new JMenu("Gestion facture");
+        mnNewMenu_3.addActionListener(this.gestionClic);
         menuBar.add(mnNewMenu_3);
-        
-        JMenuItem mntmGestionFacture = new JMenuItem("Gestion factures");
-        mntmGestionFacture.addActionListener(this.gestionClic);
-        mnNewMenu_3.add(mntmGestionFacture);
 
         // Menu "Detail propriétés"
-        //JMenu mnNewMenu_4 = new JMenu("Detail propriétés");
-        //mnNewMenu_4.addActionListener(this.gestionClic);
-        //menuBar.add(mnNewMenu_4);
+        JMenu mnNewMenu_4 = new JMenu("Detail propriétés");
+        mnNewMenu_4.addActionListener(this.gestionClic);
+        menuBar.add(mnNewMenu_4);
 
         JLabel lblNewLabel = new JLabel("Gestion de bien immobilier");
         lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 21));
@@ -126,4 +123,3 @@ public class Accueil extends JFrame {
         gestionClic.actionPerformed(e);
     }
 }
-//testBordel

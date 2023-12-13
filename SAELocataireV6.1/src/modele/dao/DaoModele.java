@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import SQL.CictOracleDataSource;
-import select.Requete;
+import modele.dao.requetes.Requete;
 
 public abstract class DaoModele<T> implements Dao<T> {
 
-    public abstract T creerInstance(ResultSet curseur) throws SQLException;
+    protected abstract T creerInstance(ResultSet curseur) throws SQLException;
 
     protected List<T> select(PreparedStatement prSt) throws SQLException {
         List<T> resultat = new ArrayList<>();
@@ -41,15 +41,8 @@ public abstract class DaoModele<T> implements Dao<T> {
     }
 
     protected T findById(Requete<T> req, String... id) throws SQLException {
-		T cr = null;
-		List<T> res = this.find(req,id);
-		if(res.isEmpty()) {
-			cr = null;
-		}else {
-			cr = res.get(0);
-		}
-		
-		return cr;
+        List<T> resultat = find(req, id);
+        return resultat.isEmpty() ? null : resultat.get(0);
     }
 
     @Override

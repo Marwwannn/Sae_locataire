@@ -3,7 +3,6 @@ package vue;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridBagLayout;
@@ -14,70 +13,57 @@ import java.awt.Font;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-
-import controle.GestionFenetreBien;
-import controle.GestionGestionFacture;
-
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 
-public class GestionFactureWindow2 extends JInternalFrame {
-    
-    private GestionFenetreBien gestionClic;
-    private JPanel contentPane;
-    private JTable tableEau;
-    private JTable tableElectricite;
-    private JTable tablePartiesCommunes;
-    private JTable tableTaxesFoncieres;
-    private JComboBox<String> comboBox; // Ajout de la JComboBox
+public class GestionFactureWindow2 extends JFrame {
 
-    GestionGestionFacture gestionGestionFacture = new GestionGestionFacture(this);
+	private JPanel contentPane;
+	private JTable tableEau;
+	private JTable tableElectricite;
+	private JTable tablePartiesCommunes;
+	private JTable tableTaxesFoncieres;
 
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    GestionFactureWindow2 frame = new GestionFactureWindow2();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					GestionFactureWindow2 frame = new GestionFactureWindow2();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
-    public GestionFactureWindow2() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 802, 526);
-        contentPane = new JPanel();
-        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+	/**
+	 * Create the frame.
+	 */
+	public GestionFactureWindow2() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 802, 526);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-        setContentPane(contentPane);
-        GridBagLayout gbl_contentPane = new GridBagLayout();
-        gbl_contentPane.columnWidths = new int[] { 350, 30, 350 };
-        gbl_contentPane.rowHeights = new int[] { 0, 300, 30 };
-        gbl_contentPane.columnWeights = new double[] { 1.0, 1.0, 1.0 };
-        gbl_contentPane.rowWeights = new double[] { 0.0, 1.0 };
-        contentPane.setLayout(gbl_contentPane);
-
-        // Ajout de la JComboBox à la barre supérieure
-        String[] options = { "Logement 1", "Logement 2", "Logement 3" }; // Remplacez par vos options
-        comboBox = new JComboBox<>(options);
-        GridBagConstraints gbc_comboBox = new GridBagConstraints();
-        gbc_comboBox.insets = new Insets(0, 0, 5, 5);
-        gbc_comboBox.anchor = GridBagConstraints.EAST;
-        gbc_comboBox.gridx = 2; // Position en colonne
-        gbc_comboBox.gridy = 0; // Position en ligne
-        contentPane.add(comboBox, gbc_comboBox);
-
-        JLabel labelTitre = new JLabel("Gestion des Factures");
-        labelTitre.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        GridBagConstraints gbc_labelTitre = new GridBagConstraints();
-        gbc_labelTitre.gridwidth = 3;
-        gbc_labelTitre.insets = new Insets(0, 0, 5, 0);
-        gbc_labelTitre.gridx = 0;
-        gbc_labelTitre.gridy = 0;
-        contentPane.add(labelTitre, gbc_labelTitre);
+		setContentPane(contentPane);
+		GridBagLayout gbl_contentPane = new GridBagLayout();
+		gbl_contentPane.columnWidths = new int[] {350, 30, 350};
+		gbl_contentPane.rowHeights = new int[] {0, 300, 30};
+		gbl_contentPane.columnWeights = new double[]{1.0, 1.0, 1.0};
+		gbl_contentPane.rowWeights = new double[]{0.0, 1.0};
+		contentPane.setLayout(gbl_contentPane);
+		
+		JLabel labelTitre = new JLabel("Gestion des Factures");
+		labelTitre.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		GridBagConstraints gbc_labelTitre = new GridBagConstraints();
+		gbc_labelTitre.gridwidth = 3;
+		gbc_labelTitre.insets = new Insets(0, 0, 5, 0);
+		gbc_labelTitre.gridx = 0;
+		gbc_labelTitre.gridy = 0;
+		contentPane.add(labelTitre, gbc_labelTitre);
 		
 		JPanel panelGauche = new JPanel();
 		GridBagConstraints gbc_panelGauche = new GridBagConstraints();
@@ -316,17 +302,13 @@ public class GestionFactureWindow2 extends JInternalFrame {
 		));
 		scrollPaneTaxesFoncieres.setViewportView(tableTaxesFoncieres);
 		
-	    JButton btnAnnuler = new JButton("Annuler");
-	    GridBagConstraints gbc_btnAnnuler = new GridBagConstraints();
-	    gbc_btnAnnuler.fill = GridBagConstraints.HORIZONTAL;
-	    gbc_btnAnnuler.insets = new Insets(0, 0, 0, 5);
-	    gbc_btnAnnuler.gridx = 0;
-	    gbc_btnAnnuler.gridy = 2;
-	    contentPane.add(btnAnnuler, gbc_btnAnnuler);
-	    
-	    
-	    btnAnnuler.addActionListener(gestionGestionFacture);
-
+		JButton btnRetour = new JButton("Retour");
+		GridBagConstraints gbc_btnRetour = new GridBagConstraints();
+		gbc_btnRetour.fill = GridBagConstraints.HORIZONTAL;
+		gbc_btnRetour.insets = new Insets(0, 0, 0, 5);
+		gbc_btnRetour.gridx = 0;
+		gbc_btnRetour.gridy = 2;
+		contentPane.add(btnRetour, gbc_btnRetour);
 		
 		JButton btnImprimer = new JButton("Imprimer Facture");
 		GridBagConstraints gbc_btnImprimer = new GridBagConstraints();
